@@ -1,18 +1,12 @@
-var boids = [];
+var flock = new Flock();
 
-function setup() {
-  createCanvas(800, 600);
-  for(i = 0; i < 10; i++)
-  {
-    boids.push(new Boid(random(0, width), random(0, height)))
-  }
-
+function setup() 
+{
+    createCanvas(800, 600);
+	flock.add(50)
 }
-function draw() {
-  background(25);
-  boids.forEach(b => {
-    b.move()
-    b.show()
-  });
-
+function draw() 
+{
+    background(25);
+	flock.run()
 }
